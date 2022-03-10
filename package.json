@@ -1,0 +1,25 @@
+{
+  "name": "simple-pokemon-rest-api-withoutdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lakshit-Chiranjiv/Simple-Pokemon-REST-API-withoutDB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lakshit-Chiranjiv/Simple-Pokemon-REST-API-withoutDB/issues"
+  },
+  "homepage": "https://github.com/Lakshit-Chiranjiv/Simple-Pokemon-REST-API-withoutDB#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
