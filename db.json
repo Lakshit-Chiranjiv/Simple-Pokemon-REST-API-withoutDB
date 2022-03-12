@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Pikachu",
+        "type": "Electric",
+        "power": 90,
+        "id": "8aded5cf-bb4d-4a69-82f3-74dde0b74c18"
+    },
+    {
+        "name": "Squirtle",
+        "type": "Water",
+        "power": 70,
+        "id": "823efa58-765e-4779-b689-2da6a292299c"
+    },
+    {
+        "name": "Charmander",
+        "type": "Fire",
+        "power": 70,
+        "id": "d8f6f51a-da27-4ac7-bed5-86d5cfa57bcc"
+    },
+    {
+        "name": "Bulbasaur",
+        "type": "Grass",
+        "power": 80,
+        "id": "bcb32c0c-9a28-4ce5-9867-4ba6ca97da07"
+    },
+    {
+        "name": "Gengar",
+        "type": "Ghost",
+        "power": 85,
+        "id": "6ca39967-468a-4517-becf-7d523623be17"
+    },
+    {
+        "name": "Onix",
+        "type": "Rock",
+        "power": 65,
+        "id": "c3c4a7d3-c4e6-4421-ae54-0c92ca7bbb7b"
+    },
+    {
+        "name": "Golem",
+        "type": "Rock",
+        "power": 62,
+        "id": "06c5c0fe-071b-4abf-827c-aa5364667a30"
+    },
+    {
+        "name": "Hypno",
+        "type": "Psychic",
+        "power": 77,
+        "id": "53a98ed1-b560-45a6-8a08-210bd281d5bc"
+    }
+]
