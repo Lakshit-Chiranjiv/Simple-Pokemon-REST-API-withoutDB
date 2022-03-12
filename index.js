@@ -42,10 +42,47 @@ app.get('/typePokemons/:type',(req,res)=>{
     }
     const arr = pokemons_array.filter((poke)=>{
         return poke.type.toLowerCase() === req.params.type.toLowerCase();
-});
+    });
      
     // res.write(`all ${req.params.type} type pokemons`);
     res.send(arr);
+});
+
+
+app.delete('/pokemon/delete/:id',(req,res)=>{
+    const pokemons_data = JSON.parse(fs.readFileSync(dbPath));
+    let pokemons_array = [];
+    for(let i of pokemons_data){
+        pokemons_array.push(i);
+    }
+    let pokmn;
+    const arr = pokemons_array.filter((poke)=>{
+        if(poke.id === req.params.id) pokmn = poke.name;
+        return poke.id !== req.params.id;
+    });
+    fs.writeFileSync(dbPath,JSON.stringify(arr,null,4));
+    res.send(`${pokmn} deleted`);
+});
+
+app.patch('/pokemon/update/:id',(req,res)=>{
+    const pokemons_data = JSON.parse(fs.readFileSync(dbPath));
+    let pokemons_array = [];
+    for(let i of pokemons_data){
+        pokemons_array.push(i);
+    }
+    let pokmn;
+    const { name, type, power } = req.body;
+    const arr = pokemons_array.map((poke)=>{
+        if(poke.id === req.params.id){
+            pokmn = poke.name;
+            if(name) poke.name = name;
+            if(type) poke.type = type;
+            if(power) poke.power = power;
+        }
+        return poke;
+    });
+    fs.writeFileSync(dbPath,JSON.stringify(arr,null,4));
+    res.send(`${pokmn} fields updated`);
 });
 
 app.listen(PORT,()=>{console.log("Server running at port "+PORT)});
