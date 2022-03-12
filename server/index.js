@@ -8,7 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const dbPath = './db.json';
+const dbPath = './data/db.json';
 
 app.get('/',(req,res)=>{
     res.send("Hello from server");
