@@ -19,6 +19,15 @@ app.get('/pokemons',async(req,res)=>{
     res.send(db_Data);
 });
 
+app.get('/pokemon/get/:id',(req,res)=>{
+    const pokemons_data = JSON.parse(fs.readFileSync(dbPath));
+    let pokmn;
+    for(let i of pokemons_data){
+        if(i.id === req.params.id) pokmn = i;
+    }
+    res.send(pokmn);
+})
+
 app.post("/addpokemon",async(req,res)=>{
     const poke_id = uuidv4();
     let poke_data = req.body;
