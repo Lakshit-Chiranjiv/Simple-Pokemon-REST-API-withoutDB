@@ -11,10 +11,10 @@ app.use(bodyParser.json());
 const dbPath = './data/db.json';
 
 app.get('/',(req,res)=>{
-    res.send("Hello from server");
+    res.send("Hello, This is a simple Pokemon API using local JSON file as a database");
 });
 
-app.get('/pokemons',async(req,res)=>{
+app.get('/pokemon/getAll',async(req,res)=>{
     const db_Data = JSON.parse(fs.readFileSync(dbPath));
     res.send(db_Data);
 });
@@ -28,7 +28,7 @@ app.get('/pokemon/get/:id',(req,res)=>{
     res.send(pokmn);
 })
 
-app.post("/addpokemon",async(req,res)=>{
+app.post("/pokemon/add",async(req,res)=>{
     const poke_id = uuidv4();
     let poke_data = req.body;
     poke_data = {...poke_data,id: poke_id};
@@ -38,12 +38,12 @@ app.post("/addpokemon",async(req,res)=>{
     res.send("Pokemon Added")
 })
 
-app.get('/randomPokemon',(req,res)=>{
+app.get('/pokemon/getRandom',(req,res)=>{
     const pokemons_array = JSON.parse(fs.readFileSync(dbPath));
     res.send(pokemons_array[Math.floor(Math.random() * pokemons_array.length)]);
 });
 
-app.get('/typePokemons/:type',(req,res)=>{
+app.get('/pokemon/getType/:type',(req,res)=>{
     const pokemons_data = JSON.parse(fs.readFileSync(dbPath));
     let pokemons_array = [];
     for(let i of pokemons_data){
